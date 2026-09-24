@@ -12,6 +12,20 @@ npx skills add targetteal/clubett-identidade-visual --skill clubett-identidade-v
 
 Para instalar apenas em um projeto, retire `-g`. Para escolher um agente, acrescente `-a codex`, `-a claude-code` ou outro agente suportado pelo gerenciador. Depois peça ao agente: **"Use a skill clubett-identidade-visual para criar ou revisar esta peça."**
 
+Para Claude Code e OpenCode no mesmo projeto:
+
+```bash
+npx skills add targetteal/clubett-identidade-visual --skill clubett-identidade-visual -a claude-code -a opencode -y
+```
+
+Hermes Agent possui um instalador próprio que aceita esta estrutura `skills/`:
+
+```bash
+hermes skills install targetteal/clubett-identidade-visual/skills/clubett-identidade-visual --yes
+```
+
+O formato `SKILL.md` é usado pelos quatro agentes acima. A instalação foi verificada para Codex, Claude Code, OpenCode e Hermes; a qualidade de uma peça produzida ainda depende dos recursos do agente, das fontes disponíveis e de revisão visual no formato final. Agentes que não carregam skills podem receber o `SKILL.md` e os arquivos anexos como contexto, mas não terão descoberta automática.
+
 ```bash
 npx skills update clubett-identidade-visual -g
 ```
